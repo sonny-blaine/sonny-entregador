@@ -1,5 +1,8 @@
 easy_admin:
     entities:
-        - App\Entity\Product
-#       - App\Entity\Category
-#       - App\Entity\User
+        - App\Entity\Carga
+        - App\Entity\Destinatario
+        - App\Entity\Entregador
+        - App\Entity\Pacote
+        - App\Entity\Rota
+        - App\Entity\Pacote\Item
