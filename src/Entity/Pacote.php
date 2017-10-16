@@ -14,15 +14,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Pacote
 {
     /**
+     * @ORM\Id()
      * @ORM\Column(type="integer")
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     public $id;
 
     /**
-     * @var Destinatario
      * @ORM\ManyToOne(targetEntity="App\Entity\Destinatario")
+     * @ORM\JoinColumn(name="destinatario_id", referencedColumnName="id")
+     * @var Destinatario
      */
     public $destinatario;
 
@@ -40,6 +41,7 @@ class Pacote
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Carga", inversedBy="pacotes")
+     * @var Carga
      */
     public $carga;
 }

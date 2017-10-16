@@ -36,4 +36,9 @@ class Destinatario
      * @ORM\Column(type="string", length=100)
      */
     public $documento;
+
+    public function __toString()
+    {
+        return $this->id . ' ' . $this->nome;
+    }
 }
