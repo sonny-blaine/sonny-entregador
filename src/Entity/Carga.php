@@ -16,25 +16,24 @@ class Carga
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public $id;
+    private $id;
 
     /**
      * @var string
      * @ORM\Column(type="string")
      */
-    public $situacao;
+    private $situacao;
 
     /**
-     * @var Pacotes
-     * @ORM\OneToMany(targetEntity="App\Entity\Pacote", mappedBy="carga")
+     * @var Volume
+     * @ORM\OneToMany(targetEntity="App\Entity\Volume", mappedBy="carga")
      */
-    public $pacotes;
+    private $volume;
 
     /**
      * @var Entregador
-     * @ORM\ManyToOne(targetEntity="App\Entity\Entregador", inversedBy="cargas")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Entregador")
      */
-    public $entregador;
-
+    private $entregador;
 
 }

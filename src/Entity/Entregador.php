@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,22 +11,20 @@ use Doctrine\ORM\Mapping as ORM;
 class Entregador
 {
     /**
+     * @ORM\Id()
      * @ORM\Column(type="integer")
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public $id;
+    private $id;
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Carga", mappedBy="entregador")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Pessoa")
+     * @var Pessoa
      */
-    public $cargas;
+    private $pessoa;
 
     /**
-     * @var Rota
-     * @ORM\ManyToOne(targetEntity="App\Entity\Rota")
+     * @ORM\Column(type="string")
      */
-    public $rota;
-
+    private $veiculo;
 }
